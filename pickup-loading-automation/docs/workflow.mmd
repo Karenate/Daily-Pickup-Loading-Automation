@@ -1,0 +1,9 @@
+flowchart TD
+ A[Select Import Product A / B / C or All] --> B[Read synthetic pickup loading records]
+ B --> C[Validate Shipment ID, Delivered Date, Net Weight]
+ C --> D[Normalize Delivered Date to calendar day]
+ D --> E[Group by product and delivery date]
+ E --> F[Count loads + join Shipment IDs + sum net weight]
+ F --> G[Match existing daily report dates]
+ G --> H[Write daily loading results only]
+ H --> I[Display product summary: matched days / loads / weight]
